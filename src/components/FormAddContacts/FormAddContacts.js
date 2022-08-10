@@ -2,8 +2,13 @@ import {useState} from "react";
 import PropTypes from 'prop-types';
 import css from './FormAddContact.module.css';
 
+// import { useSelector, useDispatch } from 'react-redux';
+// import { addContact,  } from 'Redux/changeSlice';
 
-export const FormAddContacts = ({ onSubmit})=>{
+
+export const FormAddContacts = ({ onSubmit }) => {
+  // const contacts = useSelector((state) => state.contacts.items);
+  // const dispath = useDispatch();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
     
@@ -23,7 +28,13 @@ export const FormAddContacts = ({ onSubmit})=>{
       }
 
     };
-
+    // const hendleSubmit = e => {
+    // e.preventDefault();
+    //   const form = e.currentTarget;
+    //   dispath(addContact(contacts));
+    //   form.reset();
+    
+    // };
     const hendleSubmit = e => {
     e.preventDefault();
        
@@ -62,7 +73,7 @@ export const FormAddContacts = ({ onSubmit})=>{
                 pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                 title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                 required
-                value={number}
+                // value={number}
                 onChange={hendleChange}
             />
           </label>
