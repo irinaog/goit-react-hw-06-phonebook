@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import css from './FormAddContact.module.css';
 // import shortid from 'shortid';
 
-import {  useSelector } from 'react-redux';
+// import {  useSelector } from 'react-redux';
 // import { addContact } from "Redux/store";
 // import { addContact,  } from 'Redux/changeSlice';
 
 
 export const FormAddContacts = ({onSubmit}) => {
-  const contacts = useSelector((state) => state.items);
+  // const contacts = useSelector((state) => state.items);
   // const dispath = useDispatch();
   // const dispath = useDispatch();
   // const [name, setName] = useState('');
@@ -43,7 +43,7 @@ export const FormAddContacts = ({onSubmit}) => {
       const name = e.currentTarget.elements.name.value;
       const number = e.currentTarget.elements.number.value;
       onSubmit({name, number})
-      console.log(contacts)
+      // console.log(contacts)
       e.currentTarget.reset();
       
         //  dispath(addContact({ name, number, id: shortid() })) 
