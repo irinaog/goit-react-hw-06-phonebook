@@ -3,10 +3,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
 export const addContact = createAction('phoneBook/add');
+export const deleteContact = createAction('phoneBook/delete');
 // console.log(addContact.toString())
 
 export const itemsReducer = createReducer([], {
-    [addContact]: (state, action)=> [...state, action.payload],
+    [addContact]: (state, action) => [...state, action.payload],
+    [deleteContact]: (state, action) => state.filter(contact => contact.id !== action.payload),
 });
 export const filterReducer = createReducer('', {});
 

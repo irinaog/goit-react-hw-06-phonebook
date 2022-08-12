@@ -58,9 +58,17 @@ export const App = () => {
   };
   
 
-  const deleteContact = (contactId) => {
-    contacts.filter(contact => contact.id !== contactId);
-  };
+  // const deleteContact = (contactId) => {
+  //   contacts.filter(contact => contact.id !== contactId);
+  // };
+
+  // const deleteContact = (contactId) => {
+  //   // dispath(deleteContact({id: {contactId}}))
+  //   // console.log(contactId)
+  //   dispath(deleteContact({id:contactId}))
+  //   console.log(dispath(deleteContact({id:contactId})))
+      
+  // };
 
     return (
       <>
@@ -77,10 +85,11 @@ export const App = () => {
 
         {filter !== ''?  <ContactsList
           contacts={getFilterListContact()}
-          onDeleteContact = {deleteContact}
+          // onDeleteContact = {deleteContact}
         />:<ContactsList
           contacts={contacts}
-          onDeleteContact = {deleteContact}/>}
+          // onDeleteContact={deleteContact}
+        />}
       
     
       </>
