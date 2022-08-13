@@ -6,7 +6,7 @@ import { ContactsList } from "./ContactsList/ContactList";
 import { FilterContacts } from "./FilterContacts/FilterContacts";
 
 import { useSelector,useDispatch } from "react-redux";
-import { addContact, filterContacts} from "Redux/store";
+import { addContact,} from "Redux/store";
 // import { itemsReducer } from "Redux/store";
 
 
@@ -16,7 +16,7 @@ export const App = () => {
   const dispath = useDispatch();
   // console.log(dispath)
   const contacts = useSelector(state => state.items);
-  const filter = useSelector(state => state.filter);
+  // const filter = useSelector(state => state.filter);
   // console.log(contacts)
   
   // const [contacts, setContacts] = useState(
@@ -45,11 +45,11 @@ export const App = () => {
     }
   };
 
-  const getFilterContacts = () => {
-    if (filter !== '') {
-      return dispath(filterContacts(filter));
-    }
-  };
+  // const getFilterContacts = () => {
+  //   if (filter !== '') {
+  //     return dispath(filterContacts(filter));
+  //   }
+  // };
 
 
 
@@ -86,7 +86,7 @@ export const App = () => {
        
         <FilterContacts
           // contact={filter}
-          getList={getFilterContacts}
+          // getList={getFilterContacts}
         />
 
         {contacts !== []  &&

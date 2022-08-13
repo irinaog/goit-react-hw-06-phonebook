@@ -20,7 +20,7 @@ export const FilterContacts = ({getList}) => {
                 // value={filterName}
                 onChange={(e) => {
                     dispath(filter(e.currentTarget.value))
-                    getList();
+                    // getList();
                     
                 }}
             ></input>
