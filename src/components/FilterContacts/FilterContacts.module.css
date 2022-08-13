@@ -25,6 +25,7 @@ justify-self: center;
     width: 200px;
     justify-self: center;
 
+    outline: none;
     border: 1px solid #f8ffae;
     border-radius: 2px;
 box-shadow: 0 0 20px 0.5px #43c6ac;

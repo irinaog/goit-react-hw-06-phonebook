@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import css from './ContactListItem.module.css'
 
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'Redux/store';
+import { deleteContact } from 'Redux/phoneBookActions';
 
 export const ContactsListItem = ({ name, number,id }) => {
     const dispatch = useDispatch();
@@ -19,5 +19,4 @@ ContactsListItem.propTypes = {
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    // deleteContact:PropTypes.func.isRequired,
 }

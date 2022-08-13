@@ -18,6 +18,7 @@
 
 .formInput{
     
+    outline: none;
     border: 1px solid #43c6ac;
     border-radius: 2px;
 
