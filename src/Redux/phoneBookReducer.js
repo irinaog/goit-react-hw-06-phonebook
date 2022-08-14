@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import { addContact, deleteContact, filter } from "./phoneBookActions";
 
 
-export const itemsReducer = createReducer(JSON.parse(window.localStorage.getItem('contacts'))??[], {
+export const itemsReducer = createReducer( [], {
     [addContact]: (state, action) => [...state, action.payload],
     [deleteContact]: (state, action) => state.filter(contact => contact.id !== action.payload),
 });

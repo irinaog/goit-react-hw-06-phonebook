@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+// import { useEffect} from "react";
 import shortid from 'shortid';
 
 import { FormAddContacts } from "./FormAddContacts/FormAddContacts";
@@ -17,17 +17,20 @@ export const App = () => {
   const contacts = useSelector(state => state.items);
   
 
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts)) 
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem('contacts', JSON.stringify(contacts)) 
+  // }, [contacts]);
 
 
   const formSubmitHandler = data => {
+    
     if (contacts.find(contact => (data.name === contact.name))){
       alert(data.name + ' is already in contacts' )
     }
     else {
       dispath(addContact({ name:data.name, number:data.number, id: shortid() }))
+      console.log(contacts)
+      
     }
   };
 
@@ -40,11 +43,12 @@ export const App = () => {
         <FilterContacts
         />
 
-        {contacts !== []  &&
+        {contacts.length > 0 &&
           <>
         <h2 className="contactListTitle">Contacts</h2>
         <ContactsList />
-        </>}
+        </>
+        }
       </>
     );
   
